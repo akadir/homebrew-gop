@@ -11,22 +11,22 @@ class Gop < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/akadir/gop/releases/download/v0.0.3-beta/gop_0.0.3-beta_macOS-64bit.tar.gz"
-      sha256 "7ddc073421ede4d4f24b0b75392776f264d10c5e4edb1a4941d7595106a80934"
+      sha256 "ce3370d3bd825be2ffa2df36364fedb04038fe1d144bd148dbf14ff3d8a06d89"
     end
     if Hardware::CPU.arm?
       url "https://github.com/akadir/gop/releases/download/v0.0.3-beta/gop_0.0.3-beta_macOS-ARM64.tar.gz"
-      sha256 "0c9af313d16337baaed47cd4c606b79c9aecc9e81ec35e0d6ed61772459b5221"
+      sha256 "35ff9d815e5bf0241d71275781a4332aaec0b42a8957d73264ae32b8d95963a1"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/akadir/gop/releases/download/v0.0.3-beta/gop_0.0.3-beta_Linux-64bit.tar.gz"
-      sha256 "4e2300b68fc381b524d217026678bf8df5bb4672c4358b98bff4a2ac2794b3a1"
+      sha256 "1f4dd59598913c4bdbf064d59e7c192d172ab377f9f29661a37d87855633d894"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/akadir/gop/releases/download/v0.0.3-beta/gop_0.0.3-beta_Linux-ARM64.tar.gz"
-      sha256 "22d4bd5466b3205fe12b24366ab4de1b39e6abe7e2b2d9321ffbda88d71ac189"
+      sha256 "996259a59a239df02847deb4d3eab5509b1b12326ae21e519eda9b605b69e269"
     end
   end
 
