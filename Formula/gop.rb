@@ -5,32 +5,43 @@
 class Gop < Formula
   desc "simple cli app to open current git repository's remote url in the default browser."
   homepage "https://github.com/akadir/gop"
-  version "0.0.3-beta"
-  bottle :unneeded
+  version "0.0.4-beta"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.0.3-beta/gop_0.0.3-beta_macOS-64bit.tar.gz"
-      sha256 "1ded15c2085bd1bc7ea911382ead45b30662a13fb102706fe10132ef3a19dcfe"
+      url "https://github.com/akadir/gop/releases/download/v0.0.4-beta/gop_0.0.4-beta_macOS_64bit.tar.gz"
+      sha256 "3dd794da66bca79766492b1ab942a4646d9e38c7957448d2f4a66991bc1090a5"
+
+      def install
+        bin.install "gop"
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/akadir/gop/releases/download/v0.0.3-beta/gop_0.0.3-beta_macOS-ARM64.tar.gz"
-      sha256 "83aa676452f48808d5cadbc5f4710f142c2ec8eb3db98147362aa8c7872e3d7c"
+      url "https://github.com/akadir/gop/releases/download/v0.0.4-beta/gop_0.0.4-beta_macOS_ARM64.tar.gz"
+      sha256 "d86255650c59f55c7c8d23bcbb73a29753f745b400fb08521d8acce48e2e3239"
+
+      def install
+        bin.install "gop"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.0.3-beta/gop_0.0.3-beta_Linux-64bit.tar.gz"
-      sha256 "08d7bdfb73d7313a9a4c3040ae214f3f08e1de999fc32117408bccceb01539d5"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/akadir/gop/releases/download/v0.0.3-beta/gop_0.0.3-beta_Linux-ARM64.tar.gz"
-      sha256 "447cc1b95118110f8216ef7f3edf0e76417b5e4fdd81a95b51ac235c70313c8e"
-    end
-  end
+      url "https://github.com/akadir/gop/releases/download/v0.0.4-beta/gop_0.0.4-beta_Linux_ARM64.tar.gz"
+      sha256 "5c3e96a39b5e6748475c2fc21a27b5dcf960e27febab6533ca5e60a229f44549"
 
-  def install
-    bin.install "gop"
+      def install
+        bin.install "gop"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/akadir/gop/releases/download/v0.0.4-beta/gop_0.0.4-beta_Linux_64bit.tar.gz"
+      sha256 "22fe8091d104121850541780580227ff71f2bde7a9a44cf838942a6ffa4c77cb"
+
+      def install
+        bin.install "gop"
+      end
+    end
   end
 end
