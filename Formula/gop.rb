@@ -5,20 +5,20 @@
 class Gop < Formula
   desc "simple cli app to open current git repository's remote url in the default browser."
   homepage "https://github.com/akadir/gop"
-  version "0.0.4-beta"
+  version "0.0.5-beta"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.0.4-beta/gop_0.0.4-beta_macOS_64bit.tar.gz"
-      sha256 "3dd794da66bca79766492b1ab942a4646d9e38c7957448d2f4a66991bc1090a5"
+    if Hardware::CPU.arm?
+      url "https://github.com/akadir/gop/releases/download/v0.0.5-beta/gop_0.0.5-beta_macOS_ARM64.tar.gz"
+      sha256 "77f5e14da794d857fde9b6d9f680184d9341735b1034ccbdd67b42b8aac5e165"
 
       def install
         bin.install "gop"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/akadir/gop/releases/download/v0.0.4-beta/gop_0.0.4-beta_macOS_ARM64.tar.gz"
-      sha256 "d86255650c59f55c7c8d23bcbb73a29753f745b400fb08521d8acce48e2e3239"
+    if Hardware::CPU.intel?
+      url "https://github.com/akadir/gop/releases/download/v0.0.5-beta/gop_0.0.5-beta_macOS_64bit.tar.gz"
+      sha256 "cb416a30133d87076695129047f1541d709c58229a2611c1d32e955ddb9150fe"
 
       def install
         bin.install "gop"
@@ -28,16 +28,16 @@ class Gop < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/akadir/gop/releases/download/v0.0.4-beta/gop_0.0.4-beta_Linux_ARM64.tar.gz"
-      sha256 "5c3e96a39b5e6748475c2fc21a27b5dcf960e27febab6533ca5e60a229f44549"
+      url "https://github.com/akadir/gop/releases/download/v0.0.5-beta/gop_0.0.5-beta_Linux_ARM64.tar.gz"
+      sha256 "143d69f104fa96cc6875c30a1fb51c890aefe69dbcfd4b6374197382d94e888a"
 
       def install
         bin.install "gop"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.0.4-beta/gop_0.0.4-beta_Linux_64bit.tar.gz"
-      sha256 "22fe8091d104121850541780580227ff71f2bde7a9a44cf838942a6ffa4c77cb"
+      url "https://github.com/akadir/gop/releases/download/v0.0.5-beta/gop_0.0.5-beta_Linux_64bit.tar.gz"
+      sha256 "cb4f946a3881ae50981c62bd708f5ed50305ecaa0dbd090dd5099a93a053c2d9"
 
       def install
         bin.install "gop"
