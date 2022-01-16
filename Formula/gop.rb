@@ -5,20 +5,20 @@
 class Gop < Formula
   desc "simple cli app to open current git repository's remote url in the default browser."
   homepage "https://github.com/akadir/gop"
-  version "0.3.0"
+  version "0.4.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/akadir/gop/releases/download/v0.3.0/gop_0.3.0_macOS_ARM64.tar.gz"
-      sha256 "8c8aa8ed7bee2d9d72362e109dc37ad8316ca8f17d56083f24f8974c8ee91fa8"
+    if Hardware::CPU.intel?
+      url "https://github.com/akadir/gop/releases/download/v0.4.0/gop_0.4.0_macOS_64bit.tar.gz"
+      sha256 "9348405291601958430be455b4f59fd3939f2d46f8254850ff52f1ce5f5b79ae"
 
       def install
         bin.install "gop"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.3.0/gop_0.3.0_macOS_64bit.tar.gz"
-      sha256 "225129ebb1b94da556b5bc95d1b7ddde8938dce5f746bce3dad4c959026b50ca"
+    if Hardware::CPU.arm?
+      url "https://github.com/akadir/gop/releases/download/v0.4.0/gop_0.4.0_macOS_ARM64.tar.gz"
+      sha256 "fca5d67441167449b178288576508c3ce038318d63f9ac017b61512a27183455"
 
       def install
         bin.install "gop"
@@ -27,17 +27,17 @@ class Gop < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.3.0/gop_0.3.0_Linux_64bit.tar.gz"
-      sha256 "3f9c934b160f9ad572ad63ffa76dab0488c51335ddc2885c00478c632045f205"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/akadir/gop/releases/download/v0.4.0/gop_0.4.0_Linux_ARM64.tar.gz"
+      sha256 "031baf150200d95bd067f1d57a6915754b7f151c912d5794f94faa2cf668e54f"
 
       def install
         bin.install "gop"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/akadir/gop/releases/download/v0.3.0/gop_0.3.0_Linux_ARM64.tar.gz"
-      sha256 "473a719be4c94b70e5feabba4aa35f5aa38969d090ccd590742dcf7a138fb492"
+    if Hardware::CPU.intel?
+      url "https://github.com/akadir/gop/releases/download/v0.4.0/gop_0.4.0_Linux_64bit.tar.gz"
+      sha256 "e5f51e982f6b649605603df53e3d2d39cae23419d6d153a5d5576be390038202"
 
       def install
         bin.install "gop"
