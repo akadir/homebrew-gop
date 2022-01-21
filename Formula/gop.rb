@@ -5,20 +5,20 @@
 class Gop < Formula
   desc "simple cli app to open current git repository's remote url in the default browser."
   homepage "https://github.com/akadir/gop"
-  version "0.6.0"
+  version "0.6.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/akadir/gop/releases/download/v0.6.0/gop_0.6.0_macOS_ARM64.tar.gz"
-      sha256 "3da75215fd094a13bebd339ab00c5c6209905eb3b5ff5fcd79a63fce9f465f65"
+      url "https://github.com/akadir/gop/releases/download/v0.6.1/gop_0.6.1_macOS_ARM64.tar.gz"
+      sha256 "f5dd3eb23b6a67d40f4f06b6d8553853c15ec9f86038e4674d13a6a4960d3232"
 
       def install
         bin.install "gop"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.6.0/gop_0.6.0_macOS_64bit.tar.gz"
-      sha256 "074fe96ce444abf8d75adaebe83bfa3ddabd4c5e714f635ca9c02b3248d35686"
+      url "https://github.com/akadir/gop/releases/download/v0.6.1/gop_0.6.1_macOS_64bit.tar.gz"
+      sha256 "330196142bc337abdc5a19149bcef9afb594c62e43675f3037ea8fb5989b75e4"
 
       def install
         bin.install "gop"
@@ -27,21 +27,23 @@ class Gop < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/akadir/gop/releases/download/v0.6.0/gop_0.6.0_Linux_ARM64.tar.gz"
-      sha256 "b5385271bdd940ad49542f8a278677be0b63b7518d5ae1d6f63df86c3f70158c"
+    if Hardware::CPU.intel?
+      url "https://github.com/akadir/gop/releases/download/v0.6.1/gop_0.6.1_Linux_64bit.tar.gz"
+      sha256 "f99b66891c60d8cde0670c15448d11d02b1dd335adc030b577cec9a4c7d90f24"
 
       def install
         bin.install "gop"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.6.0/gop_0.6.0_Linux_64bit.tar.gz"
-      sha256 "e20b15223261707c76b86dab94ce749b83ca0d94398a26a0c134fe39e0e8679c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/akadir/gop/releases/download/v0.6.1/gop_0.6.1_Linux_ARM64.tar.gz"
+      sha256 "155a5e9c5684004c4bdcd9bac1a340f96a96bf8dfa57af8690bfcbcd0016e86a"
 
       def install
         bin.install "gop"
       end
     end
   end
+
+  depends_on "git"
 end
