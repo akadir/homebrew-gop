@@ -5,20 +5,20 @@
 class Gop < Formula
   desc "simple cli app to open current git repository's remote url in the default browser."
   homepage "https://github.com/akadir/gop"
-  version "0.7.0"
+  version "0.7.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/akadir/gop/releases/download/v0.7.0/gop_0.7.0_macOS_ARM64.tar.gz"
-      sha256 "47c62cc6718657660f71594ec269b134e026290bbf3a6b3049bd32dd5dfc61fb"
+    if Hardware::CPU.intel?
+      url "https://github.com/akadir/gop/releases/download/v0.7.1/gop_0.7.1_macOS_64bit.tar.gz"
+      sha256 "ca359f6b18b2d5be49071e447b8263e450ec0679c9e79fe747eee741ea5cfd89"
 
       def install
         bin.install "gop"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.7.0/gop_0.7.0_macOS_64bit.tar.gz"
-      sha256 "fd49d4ee0fd4528c7d9e1b76d1426d7415c81ef4c83eb722aeb8ed0b3f42aa8e"
+    if Hardware::CPU.arm?
+      url "https://github.com/akadir/gop/releases/download/v0.7.1/gop_0.7.1_macOS_ARM64.tar.gz"
+      sha256 "34bcd8db9d96b032534607a37e26284938dc38417771b37c3a8d1ebde2489c11"
 
       def install
         bin.install "gop"
@@ -28,16 +28,16 @@ class Gop < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/akadir/gop/releases/download/v0.7.0/gop_0.7.0_Linux_ARM64.tar.gz"
-      sha256 "c0b150e3ffaf7a84e72c421cb085a06fc389636d3395c53271dd463e0901a0e0"
+      url "https://github.com/akadir/gop/releases/download/v0.7.1/gop_0.7.1_Linux_ARM64.tar.gz"
+      sha256 "0342c924f9c2c30b33ddf841d49895f534113fdcd442561f142312ab0311f8ec"
 
       def install
         bin.install "gop"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.7.0/gop_0.7.0_Linux_64bit.tar.gz"
-      sha256 "51235059fd90778bcc8f5d473d0f365af6717549f854abe0d4981c24cd7ef4ab"
+      url "https://github.com/akadir/gop/releases/download/v0.7.1/gop_0.7.1_Linux_64bit.tar.gz"
+      sha256 "4feae6035ff5fdfd94a49d8e49d5aa6f5c87aa69feff25877166980117c7e232"
 
       def install
         bin.install "gop"
