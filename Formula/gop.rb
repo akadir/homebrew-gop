@@ -5,20 +5,20 @@
 class Gop < Formula
   desc "simple cli app to open current git repository's remote url in the default browser."
   homepage "https://github.com/akadir/gop"
-  version "0.6.2"
+  version "0.7.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/akadir/gop/releases/download/v0.6.2/gop_0.6.2_macOS_ARM64.tar.gz"
-      sha256 "9e89906fbd32f885956205fbbbac5d82663dc7436871517e83f79ec228ac844c"
+      url "https://github.com/akadir/gop/releases/download/v0.7.0/gop_0.7.0_macOS_ARM64.tar.gz"
+      sha256 "47c62cc6718657660f71594ec269b134e026290bbf3a6b3049bd32dd5dfc61fb"
 
       def install
         bin.install "gop"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.6.2/gop_0.6.2_macOS_64bit.tar.gz"
-      sha256 "798a4bc010cfc7fa50296379e6d4a8877eb52c4ad4490ddd656f42daa366eeb5"
+      url "https://github.com/akadir/gop/releases/download/v0.7.0/gop_0.7.0_macOS_64bit.tar.gz"
+      sha256 "fd49d4ee0fd4528c7d9e1b76d1426d7415c81ef4c83eb722aeb8ed0b3f42aa8e"
 
       def install
         bin.install "gop"
@@ -28,16 +28,16 @@ class Gop < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/akadir/gop/releases/download/v0.6.2/gop_0.6.2_Linux_ARM64.tar.gz"
-      sha256 "1717867acef17cf2a618a9a079ebdb03457dd622f04489724189ac09d7d1cccb"
+      url "https://github.com/akadir/gop/releases/download/v0.7.0/gop_0.7.0_Linux_ARM64.tar.gz"
+      sha256 "c0b150e3ffaf7a84e72c421cb085a06fc389636d3395c53271dd463e0901a0e0"
 
       def install
         bin.install "gop"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.6.2/gop_0.6.2_Linux_64bit.tar.gz"
-      sha256 "43eb1c22fb165cdfd21bb9f25ce67871f0a109b5840d6345369b75ba4b856e4e"
+      url "https://github.com/akadir/gop/releases/download/v0.7.0/gop_0.7.0_Linux_64bit.tar.gz"
+      sha256 "51235059fd90778bcc8f5d473d0f365af6717549f854abe0d4981c24cd7ef4ab"
 
       def install
         bin.install "gop"
