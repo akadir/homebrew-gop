@@ -5,20 +5,22 @@
 class Gop < Formula
   desc "simple cli app to open current git repository's remote url in the default browser."
   homepage "https://github.com/akadir/gop"
-  version "0.7.3"
+  version "0.7.4"
+
+  depends_on "git"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/akadir/gop/releases/download/v0.7.3/gop_0.7.3_macOS_ARM64.tar.gz"
-      sha256 "467b43df8325d09f00726882b60e2110b20a828937bc51f39e5e140855abfb03"
+      url "https://github.com/akadir/gop/releases/download/v0.7.4/gop_0.7.4_macOS_ARM64.tar.gz"
+      sha256 "816bd975258a87b29298b0451f39949d3eeeb9595bcc90aa178a50ac8b93b448"
 
       def install
         bin.install "gop"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.7.3/gop_0.7.3_macOS_64bit.tar.gz"
-      sha256 "9888ce277ec5689b4d43bb62c20e63d3a7ff28fc76409b5f53c4dce1d9dbe08f"
+      url "https://github.com/akadir/gop/releases/download/v0.7.4/gop_0.7.4_macOS_64bit.tar.gz"
+      sha256 "820c13e316e191ef58e0db4173157e7fc5d1552e28e895f4dbac0401a17a6d82"
 
       def install
         bin.install "gop"
@@ -28,22 +30,20 @@ class Gop < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/akadir/gop/releases/download/v0.7.3/gop_0.7.3_Linux_ARM64.tar.gz"
-      sha256 "9524cd573b1f279bce1b85425bc91c3c06f34d4963624972920aaf23d5c5dc6d"
+      url "https://github.com/akadir/gop/releases/download/v0.7.4/gop_0.7.4_Linux_ARM64.tar.gz"
+      sha256 "29ceaae3cae93dae10e0201974ab6708e3fd9c1ceab44b3cec38d1774a58cd7a"
 
       def install
         bin.install "gop"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/akadir/gop/releases/download/v0.7.3/gop_0.7.3_Linux_64bit.tar.gz"
-      sha256 "21d3be7241c7b1bb063b21815c31d75c135269503879a1b17adfb70443eb892f"
+      url "https://github.com/akadir/gop/releases/download/v0.7.4/gop_0.7.4_Linux_64bit.tar.gz"
+      sha256 "0734216203054d999602daa2c08fa37c7943479d50dcece76dfa0f3a7c15de9d"
 
       def install
         bin.install "gop"
       end
     end
   end
-
-  depends_on "git"
 end
